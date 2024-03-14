@@ -65,7 +65,7 @@ const Edit_position = () => {
         })
         
         .then((res) => (
-            navigate(`/`)
+            navigate(`/person_activity`)
         ))
 
     }

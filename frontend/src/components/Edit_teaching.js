@@ -75,7 +75,7 @@ const Edit_teaching = () => {
         })
         
         .then((res) => (
-            navigate(`/`)
+            navigate(`/person_course`)
         ))
 
     }

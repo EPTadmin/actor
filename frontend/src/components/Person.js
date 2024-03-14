@@ -98,6 +98,15 @@ const Person = () => {
         <div>
             { loading ? <p>Loading data ...</p> :
             <MaterialReactTable 
+            initialState={{
+
+              columnVisibility: { description: false },
+            
+              showColumnFilters: true,
+      
+              sorting: [{ id: 'tableOption', desc: false }],
+      
+            }}
                 columns={columns} 
                 data={myData}
                 // enableRowActions

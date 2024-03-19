@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  backend:
+    container_name: backend
+    volumes:
+      - ./data:/data
+    env_file:
+      - .env
+    build:
+      context: ./backend 
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build: 
+      context: ./nginx
+    volumes:
+      - ./backend/static:/static
+    ports:
+      - "0.0.0.0:80:80"
+    depends_on:
+      - backend
+
+volumes:
+  static:
+  data:

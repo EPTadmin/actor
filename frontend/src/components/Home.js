@@ -91,7 +91,6 @@ const Home = () => {
     
 
     
-      
 
 
 
@@ -99,13 +98,22 @@ const Home = () => {
         <div>
             { loading ? <p>Loading data ...</p> :
             <MaterialReactTable 
+            // isMultiSortEvent={true} 
+            // maxMultiSortColCount={3}
             initialState={{
-
+              
+              sorting:
+                [{
+                  id :'semester',
+                  desc : false,
+                }],
+              
               columnVisibility: { description: false },
-            
+              pagination:{
+                pageSize:300,
+                pageIndex:0, },
               showColumnFilters: true,
-      
-              sorting: [{ id: 'tableOption', desc: false }],
+              // enablePagination:false,
       
             }}
                 enableRowActions

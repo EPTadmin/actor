@@ -14,9 +14,10 @@ SECRET_KEY = "django-insecure-!&sijha!jgr(rbgq^hjcvm!s9)66elec(7^n-^%lq#0=z*@n%)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['129.241.63.74','0.0.0.0','127.0.0.1','129.241.236.192','129.241.236.44']
-#ALLOWED_HOSTS = [    ]
-
+# ALLOWED_HOSTS = ['129.241.63.74','0.0.0.0','127.0.0.1','129.241.236.192','129.241.236.44']
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL = True   
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -44,12 +45,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://129.241.63.74:3000",
-    "http://0.0.0.0",
-    
+# CORS_ALLOWED_ORIGINS = [
+#     "http://129.241.63.74:3000",
+#     "http://0.0.0.0",
+#     "http://*.localhost/"
 
-]
+# ]
+
 
 
 ROOT_URLCONF = "project.urls"
@@ -118,8 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
-STATIC_ROOT = "../static"
+STATIC_URL = "django_static/"
+STATIC_ROOT = "./static"
 
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS = [

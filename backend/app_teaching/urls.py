@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 # from app_teaching.views import BootstrapFilterView
 from .views import *
@@ -11,7 +11,7 @@ router.register('person_course',PersonCourseViewset,basename = 'person_course')
 router.register('person_activity',PersonActivityViewset,basename = 'person_activity')
 router.register('position_activity',PositionActivityViewset,basename = 'position_activity')
 
-urlpatterns = router.urls
+urlpatterns = [path('api/', include((router.urls, 'app_teaching')))]
 
 
 # urlpatterns = [

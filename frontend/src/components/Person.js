@@ -17,10 +17,11 @@ const Person = () => {
 
      const GetData = () => {
         AxiosInstance.get(`person/`).then((res) => {
+          console.log(res)
           let d = res.data
           console.log('d',d)
           for (let i=0 ; i<d.length ;i++){
-            d[i]['courses'] = d[i]['courses'].map(e=> <>{e.course_id} {e.name}<br/></>)  
+            d[i]['courses'] = d[i]['courses'] && d[i]['courses'].map(e=> <>{e.course_id} {e.name}<br/></>)  
             // d[i]['courses'] = [1, 2, 3, 4]
           }
           // d['courses'] = d['courses'] && d['courses'].map(e=> `${e.course_id} ${e.name}`)  

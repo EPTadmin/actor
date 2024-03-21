@@ -5,6 +5,7 @@ services:
     container_name: backend
     volumes:
       - ./data:/data
+      - static:/app/static
     env_file:
       - .env
     build:
@@ -15,12 +16,12 @@ services:
     build:
       context: ./frontend
     volumes:
-      - frontend:/app/dist
+      - frontend:/app/build
   nginx:
     build: 
       context: ./nginx
     volumes:
-      - ./backend/static:/static
+      - static:/django_static
       - frontend:/var/www/frontend
     ports:
       - "0.0.0.0:80:80"
@@ -31,5 +32,4 @@ services:
 volumes:
   static:
   data:
-  backend:
   frontend:

@@ -46,12 +46,12 @@ ChartJS.register(
 
 
 const BarChart_load =() => {
-  const[course, setCourse]=useState()
-  const[person, setPerson]=useState()
-  const[person_course, setPersonCourse]=useState()
-  const[person_activity, setPersonActivity]=useState()
+  const[course, setCourse]=useState([])
+  const[person, setPerson]=useState([])
+  const[person_course, setPersonCourse]=useState([])
+  const[person_activity, setPersonActivity]=useState([])
   const[loading,setLoading] = useState(true)
-  const[position_activity,setActivity]=useState()
+  const[position_activity,setActivity]=useState([])
 
 
   useEffect(() => { 

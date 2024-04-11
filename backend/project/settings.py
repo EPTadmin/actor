@@ -88,7 +88,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
+CSRF_TRUSTED_ORIGINS = ['http://*.localhost','http://*.10.212.25.10','http://*.192.168.24.203']
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",

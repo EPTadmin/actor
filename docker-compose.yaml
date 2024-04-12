@@ -24,7 +24,7 @@ services:
       - static:/django_static
       - frontend:/var/www/frontend
     ports:
-      - "192.168.24.203::80:80"
+      - "0.0.0.0:80:80"
     depends_on:
       - backend
       - frontend
